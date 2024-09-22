@@ -31,4 +31,10 @@ export class PaymentService {
 
     return response;
   }
+
+  async confirmPayment(token: string, sessionId: string) {
+    const mergeData = { token, sessionId };
+    const buildXml = await convertJsonToXml(mergeData);
+    return this.soapService.requestSoap('/soap/payment/confirm', buildXml);
+  }
 }
