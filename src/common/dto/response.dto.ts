@@ -15,9 +15,15 @@ export class ResponseDto<T> {
 
   @ApiProperty({
     description: 'Error message',
-    example: 'Cliente ya registrado',
+    example: 'Error message',
   })
-  message_error: string;
+  message_error?: string;
+
+  @ApiProperty({
+    description: 'success message',
+    example: 'success message',
+  })
+  message?: string;
 
   @ApiProperty({
     description: 'Additional data related to the response',
