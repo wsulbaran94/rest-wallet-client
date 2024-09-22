@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { ClientModule } from './features/client/client.module';
+import { WalletModule } from './features/wallet/wallet.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { ClientModule } from './features/client/client.module';
       isGlobal: true,
     }),
     ClientModule,
+    WalletModule,
   ],
   controllers: [AppController],
   providers: [AppService],
